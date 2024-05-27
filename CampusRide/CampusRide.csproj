@@ -52,4 +52,8 @@
     <None Include="wwwroot\lib\font-awesome\webfonts\fa-v4compatibility.woff2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Models\" />
+  </ItemGroup>
+
 </Project>
