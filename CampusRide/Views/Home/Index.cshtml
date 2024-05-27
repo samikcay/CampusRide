@@ -1,8 +1,28 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Ana Sayfa";
 }
-
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>deneme123321123213312312421312521321</p>
+<!-- Düzenleyeceğim uğraştırıyor sağ olsun-->
+<div style="
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+">
+    <div style="
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      width: 100%;
+    ">
+        <div class="text-start">
+            <span style="font-size:50px;">Kampüse ulaşım <br /> artık daha kolay.</span>
+        </div>
+        <div class="text-end">
+            <h1 style="margin-right:100px;">Merhaba.</h1>
+            <p class="lead">Devam etmek için giriş yapın veya kayıt olun.</p>
+            <a class="btn btn-primary" href="User/Register">Kayıt Ol</a>
+            <a style="margin-right:100px;" class="btn btn-outline-primary" href="User/Login">Giriş Yap</a>
+        </div>
+    </div>
 </div>
