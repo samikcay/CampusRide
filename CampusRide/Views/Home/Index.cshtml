@@ -1,28 +1,32 @@
 ﻿@{
-    ViewData["Title"] = "Ana Sayfa";
+	ViewData["Title"] = "Ana Sayfa";
 }
-<!-- Düzenleyeceğim uğraştırıyor sağ olsun-->
-<div style="
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-">
-    <div style="
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-evenly;
-      width: 100%;
-    ">
-        <div class="text-start">
-            <span style="font-size:50px;">Kampüse ulaşım <br /> artık daha kolay.</span>
-        </div>
-        <div class="text-end">
-            <h1 style="margin-right:100px;">Merhaba.</h1>
-            <p class="lead">Devam etmek için giriş yapın veya kayıt olun.</p>
-            <a class="btn btn-primary" href="User/Register">Kayıt Ol</a>
-            <a style="margin-right:100px;" class="btn btn-outline-primary" href="User/Login">Giriş Yap</a>
-        </div>
-    </div>
-</div>
+<!-- giriş yaptıysa if yapmadıysa else çalışacak ama paranteze ne yazacağız bilmiyom-->
+@if (false)
+{
+	
+}
+else
+{
+	<div style="
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 75vh;
+	margin: 0;
+	">
+		<div class="container text-center">
+			<div class="row justify-content-between">
+				<div class="col-4">
+					<span style="font-size:50px;">Kampüse ulaşım <br /> artık daha kolay.</span>
+				</div>
+				<div class="col-4">
+					<h1>Merhaba.</h1>
+					<p class="lead">Devam etmek için giriş yapın veya kayıt olun.</p>
+					<a class="btn btn-primary" href="User/Register">Kayıt Ol</a>
+					<a class="btn btn-outline-primary" href="User/Login">Giriş Yap</a>
+				</div>
+			</div>
+		</div>
+	</div>
+}

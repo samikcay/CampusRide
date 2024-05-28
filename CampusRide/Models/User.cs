@@ -1,12 +1,17 @@
-﻿namespace CampusRide.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace CampusRide.Models
 {
     public class User
     {
-        public ulong Id { get; set; }
+        public int Id { get; set; }
+        [Required]
         public string? Name { get; set; } = string.Empty;
-        public string? Surname { get; set; } = string.Empty;
-        public string? FullName { get; } 
-        public string? Email { get; set; } = string.Empty;
+		[Required]
+		public string? Surname { get; set; } = string.Empty;
+        public string? FullName { get; }
+		[Required]
+		public string? Email { get; set; } = string.Empty;
         public DateTime RegistryTime { get; set; }
         public User()
         {
