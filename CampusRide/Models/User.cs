@@ -12,6 +12,8 @@ namespace CampusRide.Models
         public string? FullName { get; }
 		[Required]
 		public string? Email { get; set; } = string.Empty;
+        [Required]
+        public string? Password {  get; set; } = string.Empty;
         public DateTime RegistryTime { get; set; }
         public User()
         {
