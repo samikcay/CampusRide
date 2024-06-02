@@ -1,4 +1,40 @@
-﻿@page
-@model CampusRide.Views.Ride.CreateModel
-@{
-}
+﻿@model CampusRide.Models.Ride;
+
+<div class="badi">
+    <div class="login-container bg-light">
+        <h1>Yolculuk Oluştur</h1>
+        <br />
+
+        @using (Html.BeginForm())
+        {
+            <div class="form-group">
+                @Html.LabelFor(m => m.StartingLocation,"Başlangıç Konumu")
+                @Html.DropDownListFor(m => m.StartingLocation, Model.StartingLocations, "Seçiniz", new { @class = "form-control" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.EndingLocation,"Varış Konumu")
+                @Html.DropDownListFor(m => m.EndingLocation, Model.EndingLocations, "Seçiniz", new { @class = "form-control" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.StartingTime,"Hareket Saati")
+                @Html.TextBoxFor(m => m.StartingTime, "{0:HH:mm}", new { @class = "form-control", @type = "time" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.EndingTime,"Varış Saati")
+                @Html.TextBoxFor(m => m.EndingTime, "{0:HH:mm}", new { @class = "form-control", @type = "time" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.TravelDate)
+                @Html.TextBoxFor(m => m.TravelDate, "{0:yyyy-MM-dd}", new { @class = "form-control", @type = "date" })
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        }
+
+        </div>
+    </div>
+</div>
