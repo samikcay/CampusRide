@@ -12,6 +12,12 @@ builder.Services.AddDbContext<RepositoryContext>(options =>
 
 var app = builder.Build();
 
+//if (!app.Environment.IsDevelopment()) sayfa tasarlanýnca düzeltilecek.
+{
+	app.UseExceptionHandler("/Home/Error");
+	app.UseHsts();
+}
+
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
