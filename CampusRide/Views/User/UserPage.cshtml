@@ -1,12 +1,25 @@
-﻿@page
-@model CampusRide.Views.User.UserPageModel
-@{
+﻿@{
+    ViewData["Title"] = "Kullanıcı Sayfası";
 }
 
+<h2>Hoş Geldiniz, @User.Identity.Name!</h2>
+
+<p>Burada kullanıcıya özel içerikler olabilir.</p>
+
 <div>
-    <h2 style="text-align:center"> Bu sayfa kullanıcıların göreceği sayfa</h2>
-    <br />
-    <a asp-controller="Ride" asp-action="Create">Yolculuk İlanı Ver</a>
-    <br />
-    <a asp-controller="Ride" asp-action="List">Yolculuk İlanı Ara</a>
+    <h3>Mesaj İşlemleri</h3>
+    <ul>
+        <li><a asp-controller="Messages" asp-action="Index">Mesajları Görüntüle</a></li>
+        <li><a asp-controller="Messages" asp-action="Create">Yeni Mesaj Oluştur</a></li>
+    </ul>
 </div>
+
+<div>
+    <h3>Yolculuk İşlemleri</h3>
+    <ul>
+        <li><a asp-controller="Ride" asp-action="Create">Yolculuk İlanı Ver</a></li>
+        <li><a asp-controller="Ride" asp-action="List">Yolculuk İlanı Ara</a></li>
+    </ul>
+</div>
+
+<!-- Diğer kullanıcı sayfası özel içeriklerini buraya ekleyebilirsiniz -->

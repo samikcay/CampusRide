@@ -1,0 +1,32 @@
+﻿@model IEnumerable<CampusRide.Models.Message>
+
+@{
+    ViewData["Title"] = "Mesajlar";
+}
+
+<h2>Mesajlar</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Gönderen</th>
+            <th>Alıcı</th>
+            <th>Mesaj İçeriği</th>
+            <th>İşlemler</th> <!-- Yeni kolon: İşlemler -->
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var message in Model)
+        {
+            <tr>
+                <td>@message.SenderId</td>
+                <td>@message.ReceiverId</td>
+                <td>@message.Content</td>
+                <td>
+                    <!-- Yanıtla düğmesi -->
+                    <a asp-controller="Messages" asp-action="Reply" asp-route-messageId="@message.Id" class="btn btn-primary">Yanıtla</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
