@@ -48,5 +48,10 @@ namespace CampusRide.Controllers
 
             return RedirectToAction("Index", "Messages");
         }
+
+        public  IActionResult Create()
+        {
+            return View();
+        }
     }
 }
