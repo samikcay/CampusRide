@@ -1,17 +1,52 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using CampusRide.Models; // MessageViewModel buradan gelecek
+using CampusRide.Models;
 
 namespace CampusRide.Controllers
 {
+    public class MessagesController : Controller
     {
-            // TODO: Veritabanına yeni bir mesaj oluştur ve kaydet
-            //       Yanıtlanan mesajın kimden geldiğini, kime gittiğini ve yanıtın hangi mesaja ait olduğunu belirlemeyi unutma
+        private readonly RepositoryContext _context;
 
-            // Başarılı bir şekilde yanıtlandıktan sonra, mesajların listelendiği bir sayfaya yönlendirme yapabilirsiniz
-            return RedirectToAction("Index", "Messages");
+        public MessagesController(RepositoryContext context)
+        {
+            _context = context;
         }
 
+        // Index eylemi: Kullanıcının gelen mesajlarını listeler
+        public IActionResult Index()
+        {
+            // Mevcut kullanıcıya ait gelen mesajları getir
+            var currentUserMessages = _context.Messages;
 
+            // Gelen mesajları görüntülemek için view'e aktar
+            return View(currentUserMessages);
+        }
 
+        // Reply eylemi: Mesajlara yanıt verme işlemini gerçekleştirir
+        [HttpPost]
+        public IActionResult Reply(int messageId, string replyContent)
+        {
+            // Yanıtı işleme alma kodu buraya gelecek
+            // Yeni bir mesaj oluştur ve veritabanına kaydet
+
+            var originalMessage = _context.Messages.Find(messageId);
+            if (originalMessage == null)
+            {
+                return NotFound();
+            }
+
+            var newMessage = new Message
+            {
+                SenderId = originalMessage.ReceiverId,
+                ReceiverId = originalMessage.SenderId,
+                Content = replyContent,
+                ReplyTo = originalMessage.Id
+            };
+
+            _context.Messages.Add(newMessage);
+            _context.SaveChanges();
+
+            return RedirectToAction("Index", "Messages");
+        }
     }
 }
