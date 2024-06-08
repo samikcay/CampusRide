@@ -22,7 +22,7 @@ namespace CampusRide.Controllers
             //{
                 // Kullanıcı doğrulama işlemini burada gerçekleştirin
                 // Örnek:
-                if (user.Email == "admin" && user.Password == "123")
+                if (user.PhoneNumber == "123" && user.Password == "123")
                 {
                     // Giriş başarılı, yönlendirme yapabilirsiniz
                     return RedirectToAction("UserPage", "User");
