@@ -18,5 +18,6 @@ namespace CampusRide.Models
         public string Content { get; set; }
 
         public DateTime SentTime { get; set; }
+        public int? ReplyTo { get; set; }
     }
 }
