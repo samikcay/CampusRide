@@ -12,6 +12,5 @@ namespace CampusRide.Models
         public DbSet<User> Users { get; set; }
         public DbSet<Ride> Rides { get; set; }
         public DbSet<Message> Messages { get; set; }
-        //public DbSet<SelectListGroup> SelectListGroups { get; set; } // Bu satırı kaldırın
     }
 }
