@@ -62,5 +62,10 @@ namespace CampusRide.Controllers
         {
             return View();
         }
+
+        public IActionResult List()
+        {
+            return View();
+        }
     }
 }
