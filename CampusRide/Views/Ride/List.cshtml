@@ -1,4 +1,12 @@
-﻿
-@model CampusRide.Views.Ride.ListModel
-@{
-}
+﻿@model List<Ride>
+
+<div class="list-group">
+    @foreach (var ride in Model.Rides)
+    {
+        <div class="list-group-item">
+            <h5 class="mb-1">Başlangıç: @ride.StartLocation - Bitiş: @ride.EndLocation</h5>
+            <p class="mb-1">Başlangıç Saati: @ride.StartTime.ToString("g")</p>
+            <p class="mb-1">Bitiş Saati: @ride.EndTime.ToString("g")</p>
+        </div>
+    }
+</div>

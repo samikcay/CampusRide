@@ -1,11 +1,17 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using CampusRide.Models;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.IdentityModel.Tokens;
 
 namespace CampusRide.Controllers
 {
     public class RideController : Controller
     {
+        private readonly RepositoryContext _context;
+        public RideController(RepositoryContext context)
+        {
+            _context = context;
+        }
         public ActionResult Create()
         {
             var startingLocations = new List<SelectListItem>
@@ -63,9 +69,9 @@ namespace CampusRide.Controllers
             return View();
         }
 
-        public IActionResult List()
+        public IEnumerable<Ride> List()
         {
-            return View();
+            return _context.Rides.ToList();
         }
     }
 }
